@@ -1,6 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 
+
+
+import TermContainer from './components/TermContainer.js';
+
 function App() {
 
 
@@ -27,6 +31,11 @@ function App() {
           Learn React
         </a>
       </header>
+
+
+      <TermContainer />
+
+
     </div>
   );
 }
