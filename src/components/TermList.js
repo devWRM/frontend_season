@@ -34,19 +34,21 @@ class TermList extends Component {
         //  Deposit ALL the terms in a variable
         allTerms = this.props.terms.length && this.props.terms
         //  Map ALL the terms to create checkboxes that checkClick state on each
-        termCheckboxes = this.props.terms.length && this.allTerms.map(term => {
-            return  <div key={term.id}>
+        // termCheckboxes = this.props.terms.length && this.allTerms.map(term => {
 
-                        <input  type="checkbox"
-                                id={term.id}
-                                name={term.id}
-                                value={term.name}
+                termCheckboxes = this.props.terms.length && this.allTerms.map(term => {
+                        return  <div key={term.id}>
 
-                                onChange={this.checkClick}
+                                <input  type="checkbox"
+                                        id={term.id}
+                                        name={term.id}
+                                        value={term.name}
 
-                        /><label for={term.id}>{term.name}</label>
-                    </div>            
-        })
+                                        onChange={this.checkClick}
+
+                                /><label for={term.id}>{term.name}</label>
+                            </div>            
+                })
 
 
 
@@ -66,7 +68,7 @@ class TermList extends Component {
             <div>
                 NEW Term List
                 {this.props.terms.length && this.termCheckboxes}
-                {this.props.terms.length && displayItems + ""}
+                {this.props.terms.length && displayItems + "Hello"}
 
             </div>
         )
