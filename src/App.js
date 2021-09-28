@@ -1,11 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import { connect } from 'react-redux';
+import { useEffect } from 'react';
 
 
-
+import { fetchTerms } from './actions/termActions.js';
 import TermContainer from './components/TermContainer.js';
 
-function App() {
+function App(props) {
+
+    useEffect(
+      () => {
+        props.fetchTerms()
+      }, []
+    )
 
 
   // function componentDidMount() {
@@ -40,4 +48,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect(null, { fetchTerms })(App);
