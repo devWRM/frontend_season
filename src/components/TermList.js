@@ -26,6 +26,7 @@ class TermList extends Component {
             var {name, checked} = e.target;
             this.setState((e)=>{
                 var selectedSeason = e.Seasons
+                var tcb = termCheckboxes
                 return selectedSeason[name] = checked;
             });
         };
@@ -36,30 +37,20 @@ class TermList extends Component {
         //  Map ALL the terms to create checkboxes that checkClick state on each
         // termCheckboxes = this.props.terms.length && this.allTerms.map(term => {
 
-        
+                termCheckboxes = this.props.terms.length && this.allTerms.map(term => {
+                        return  <div key={term.id}>
 
-                termCheckboxes = () => {
-                        this.props.terms.length && this.allTerms.map(term => {
-                                return  <div key={term.id}>
+                                <input  type="checkbox"
+                                        id={term.id}
+                                        name={term.id}
+                                        value={term.name}
 
-                                        <input  type="checkbox"
-                                                id={term.id}
-                                                name={term.id}
-                                                value={term.name}
+                                        onChange={this.checkClick}
 
-                                                onChange={this.checkClick}
+                                /><label for={term.id}>{term.name}</label>
+                            </div>            
+                })
 
-                                        /><label for={term.id}>{term.name}</label>
-                                    </div>            
-                        })
-                }
-
-
-                useEffect(
-                    () => {
-                        termCheckboxes()
-                    }, []
-                  ) 
 
 
 
@@ -74,7 +65,7 @@ class TermList extends Component {
         // Below shows ONLY displayItems with true checked state
         let displayItems = Object.keys(this.state.Seasons).filter((stateKey) => this.state.Seasons[stateKey])
 
-
+        
         return (
             <div>
                 NEW Term List
