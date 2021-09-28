@@ -26,7 +26,6 @@ class TermList extends Component {
             var {name, checked} = e.target;
             this.setState((e)=>{
                 var selectedSeason = e.Seasons
-                var tcb = termCheckboxes
                 return selectedSeason[name] = checked;
             });
         };
@@ -35,7 +34,8 @@ class TermList extends Component {
         //  Deposit ALL the terms in a variable
         allTerms = this.props.terms.length && this.props.terms
         //  Map ALL the terms to create checkboxes that checkClick state on each
-        // termCheckboxes = this.props.terms.length && this.allTerms.map(term => {
+        // NOTE Checkboxes are NOT automatically displaying when app first opened nor on page refresh
+        // NOTE Checkboxes only shows AFTER app is opened and TermList.js component adjusted/altered
 
                 termCheckboxes = this.props.terms.length && this.allTerms.map(term => {
                         return  <div key={term.id}>
