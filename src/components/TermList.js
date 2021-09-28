@@ -38,8 +38,8 @@ class TermList extends Component {
 
         
 
-                function termCheckboxes() {
-                        return this.props.terms.length && this.allTerms.map(term => {
+                termCheckboxes = () => {
+                        this.props.terms.length && this.allTerms.map(term => {
                                 return  <div key={term.id}>
 
                                         <input  type="checkbox"
@@ -55,9 +55,11 @@ class TermList extends Component {
                 }
 
 
-                componentDidMount() {
-                    termCheckboxes()
-                }
+                useEffect(
+                    () => {
+                        termCheckboxes()
+                    }, []
+                  ) 
 
 
 
