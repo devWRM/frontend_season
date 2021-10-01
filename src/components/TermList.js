@@ -4,16 +4,26 @@ import { connect } from 'react-redux';
 class TermList extends Component {
 // this.props.terms
 
-//     constructor() {
+
+//     constructor(props) {
 // // debugger;
-//         super();
-       
+//         super(props);
+//         this.state = {
+//             toggler: false
+//         }       
 //     }
+
+
+            // state = {
+            //     toggler: false
+            // }   
+
 
 
 
 
     state = {
+        toggler: false,
         Seasons: {
             1: false,
             2: false,
@@ -22,6 +32,16 @@ class TermList extends Component {
         }
     }
 
+
+
+    componentDidMount = () => {
+        this.setState({
+            toggler: !this.state.toggler
+        })
+    }
+
+
+
         checkClick = (e) => {
             var {name, checked} = e.target;
             this.setState((e)=>{
@@ -29,6 +49,7 @@ class TermList extends Component {
                 return selectedSeason[name] = checked;
             });
         };
+
 
 
         //  Deposit ALL the terms in a variable
@@ -63,16 +84,23 @@ class TermList extends Component {
 
         // Below filtering keys because Object.keys indicates keys
         // Below shows ONLY displayItems with true checked state
-        let displayItems = Object.keys(this.state.Seasons).filter((stateKey) => this.state.Seasons[stateKey])
+        let displayItems = this.props.terms.length ? Object.keys(this.state.Seasons).filter((stateKey) => this.state.Seasons[stateKey])
+                :   ""
 
-        
+    
+
         return (
-            <div>
+            <div className="container">
                 NEW Term List
                 {this.termCheckboxes}
-                {/* {this.props.terms.length && this.termCheckboxes} */}
-                {this.props.terms.length && displayItems + "Hello"}
 
+
+                {/* {this.props.terms.length && this.termCheckboxes} */}
+
+
+                {this.props.terms.length ? (displayItems + "Hello")
+                    :   ""
+                }
 
             </div>
         )
