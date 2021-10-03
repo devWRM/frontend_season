@@ -1,0 +1,14 @@
+.container {
+    /* arrange child components side by side */
+    display: flex;
+
+    /* stacks child components in a column */
+    flex-direction: column;
+
+
+    /* width & margin together centers child components */
+    width: 500px;
+    margin: auto;
+
+
+}
