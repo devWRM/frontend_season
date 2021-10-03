@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import './TermList.css';
+
+
+
+
+// STYLING RESOURCE     https://www.youtube.com/watch?v=5mHWWwbOu-s
+
 class TermList extends Component {
 // this.props.terms
 
