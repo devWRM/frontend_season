@@ -4,7 +4,13 @@ import { connect } from 'react-redux';
 class TermList extends Component {
 // this.props.terms
 
+    // componentDidMount() {
+    //     this.forceUpdate();
+    //     // this.setState({});
+    // }
 
+
+    
 //     constructor(props) {
 // // debugger;
 //         super(props);
@@ -34,11 +40,13 @@ class TermList extends Component {
 
 
 
-    componentDidMount = () => {
-        this.setState({
-            toggler: !this.state.toggler
-        })
-    }
+    
+
+    // componentDidMount = () => {
+    //     this.setState({
+    //         toggler: !this.state.toggler
+    //     })
+    // }
 
 
 
@@ -91,16 +99,27 @@ class TermList extends Component {
 
         return (
             <div className="container">
-                NEW Term List
-                {this.termCheckboxes}
+                <div>
+                    NEW Term List
+                </div>
+
+
+                <div>
+                    {this.termCheckboxes}
+                </div>
+
+
+                <div>
+                    {this.props.terms.length ? (displayItems + "")
+                        :   ""
+                    }
+                </div>
+
 
 
                 {/* {this.props.terms.length && this.termCheckboxes} */}
 
 
-                {this.props.terms.length ? (displayItems + "Hello")
-                    :   ""
-                }
 
             </div>
         )
