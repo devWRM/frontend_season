@@ -104,20 +104,19 @@ class TermList extends Component {
                 :   ""
 
     
-
         return (
             <div className="container">
-                <div>
+                <div class="child child-1">
                     NEW Term List
                 </div>
 
 
-                <div>
+                <div class="child child-2">
                     {this.termCheckboxes}
                 </div>
 
 
-                <div>
+                <div class="child child-3">
                     {this.props.terms.length ? (displayItems + "")
                         :   ""
                     }
