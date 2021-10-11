@@ -16,7 +16,6 @@ class TermList extends Component {
     //     // this.setState({});
     // }
 
-
     
 //     constructor(props) {
 // // debugger;
@@ -65,6 +64,7 @@ class TermList extends Component {
                 return selectedSeason[name] = checked;
             });
         };
+
 
 
 
