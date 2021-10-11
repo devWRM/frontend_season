@@ -2,13 +2,41 @@
     /* arrange child components side by side */
     display: flex;
 
-    /* stacks child components in a column */
-    flex-direction: column;
+    /* -- lines child components across page */
+    /* justify-content: center; */
+    /* -- retains child components different height sizes */
+    /* align-items: flex-start; */
 
+    /* -- stacks child components in a column */
+    /* flex-direction: column; */
 
-    /* width & margin together centers child components */
-    width: 500px;
-    margin: auto;
-
+    /* -- width & margin together centers child components */
+    /* width: 500px; */
+    /* margin: auto; */
 
 }
+
+.child {
+    width: 300px;
+    margin: 10px;
+    border: 1px solid #333;
+    padding: 5px;
+    background-color: #dfdfdf;
+}
+
+.child-1 {
+    min-height: 50px;
+}
+
+.child-2 {
+    min-height: 100px;
+    
+}
+
+
+.child-3 {
+    min-height: 150px;
+    
+}
+
+
