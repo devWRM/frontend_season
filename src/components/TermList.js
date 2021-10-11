@@ -38,12 +38,13 @@ class TermList extends Component {
     state = {
         toggler: false,
         Seasons: {
-            1: false,
-            2: false,
-            3: false,
-            4: false
+            "one": false,
+            "two": false,
+            "three": false,
+            "four": false
         }
     }
+
 
 
 
